@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="QY@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="qy">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="stu27"/>
+    <table id="7" parent="2" name="client"/>
+    <table id="8" parent="2" name="contact"/>
+    <table id="9" parent="2" name="cs"/>
+    <table id="10" parent="2" name="myuser"/>
+    <table id="11" parent="2" name="product"/>
+    <table id="12" parent="2" name="staff"/>
+    <column id="13" parent="7" name="clientName">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="7" name="clientTelephone">
+      <Position>2</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="7" name="clientAddress">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="7" name="clientEmail">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="17" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>clientName</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="8" name="clientName">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="8" name="contactName">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="8" name="contactContents">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="8" name="contactStart">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="8" name="contactEnd">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="8" name="StaffName">
+      <Position>6</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="8" name="contact_client_c_clientName_fk">
+      <ColNames>clientName</ColNames>
+    </index>
+    <index id="25" parent="8" name="contact___fk">
+      <ColNames>StaffName</ColNames>
+    </index>
+    <foreign-key id="26" parent="8" name="contact_client_c_clientName_fk">
+      <ColNames>clientName</ColNames>
+      <RefSchemaName>qy</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>clientName</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="8" name="contact___fk">
+      <ColNames>StaffName</ColNames>
+      <RefSchemaName>qy</RefSchemaName>
+      <RefTableName>staff</RefTableName>
+      <RefColNames>staffName</RefColNames>
+    </foreign-key>
+    <column id="28" parent="9" name="clientName">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="9" name="clientOpinion">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="9" name="StaffName">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="31" parent="9" name="cs_client_clientName_fk">
+      <ColNames>clientName</ColNames>
+    </index>
+    <index id="32" parent="9" name="cs___fk">
+      <ColNames>StaffName</ColNames>
+    </index>
+    <foreign-key id="33" parent="9" name="cs_client_clientName_fk">
+      <ColNames>clientName</ColNames>
+      <RefSchemaName>qy</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>clientName</RefColNames>
+    </foreign-key>
+    <foreign-key id="34" parent="9" name="cs___fk">
+      <ColNames>StaffName</ColNames>
+      <RefSchemaName>qy</RefSchemaName>
+      <RefTableName>staff</RefTableName>
+      <RefColNames>staffName</RefColNames>
+    </foreign-key>
+    <column id="35" parent="10" name="userName">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="36" parent="10" name="password">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="37" parent="10" name="type">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="productName">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="11" name="productModel">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="11" name="productNumber">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="11" name="productPrice">
+      <Position>4</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="12" name="staffName">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="staffSex">
+      <Position>2</Position>
+      <DataType>varchar(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="12" name="staffAge">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="12" name="staffEducation">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="12" name="staffDepartment">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="12" name="staffDate">
+      <Position>6</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="12" name="staffDuty">
+      <Position>7</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="12" name="staffWage">
+      <Position>8</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>staffName</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
